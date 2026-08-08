@@ -1,0 +1,18 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  esp32-ble-server:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: jdx/mise-action@v4
+      - name: Compile esp32_ble_server fixture
+        run: uvx --from esphome==2026.7.4 esphome compile tests/esp32_ble_server.yaml

@@ -1,0 +1,10 @@
+.esphome/
+**/.esphome/
+__pycache__/
+*.py[cod]
+
+.vscode/
+.DS_Store
+.env
+.envrc
+*.asc
